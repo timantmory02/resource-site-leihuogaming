@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷火电竞 · 日常资讯与参考平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f9fc;
+      color: #1e2b3a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      padding: 2.4rem 1.6rem;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: #0f1a2b;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(145deg, #2b5a8c, #1d3e62);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #4a5b6e;
+      max-width: 600px;
+      border-left: 3px solid #2b5a8c;
+      padding-left: 1.2rem;
+      margin-top: 0.6rem;
+    }
+
+    /* 通用区块 */
+    .section {
+      margin-top: 2.8rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #1e2b3a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 1.5rem;
+      background: #d4a15a;
+      border-radius: 2px;
+    }
+
+    /* 优势卡片区 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 20, 40, 0.04);
+      transition: all 0.15s ease;
+      border: 1px solid #e9edf2;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 22px rgba(31, 52, 78, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e2f41;
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4e637b;
+    }
+
+    /* 说明区 */
+    .explain-text {
+      background: #ffffff;
+      padding: 1.6rem 1.8rem;
+      border-radius: 16px;
+      border: 1px solid #eef2f6;
+      font-size: 1rem;
+      color: #1f3044;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    .explain-text strong {
+      color: #1d3e62;
+    }
+
+    .inline-link {
+      color: #2b5a8c;
+      text-decoration: none;
+      border-bottom: 1px solid #b6cbd9;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      color: #17406b;
+      border-bottom-color: #17406b;
+    }
+
+    /* FAQ 摘要 */
+    .faq-preview {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.2rem 1.6rem 1.6rem;
+      border: 1px solid #eef2f6;
+      margin-top: 1rem;
+    }
+
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #edf1f6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #1e2f41;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+
+    .faq-a {
+      color: #4b617a;
+      font-size: 0.92rem;
+      padding-left: 0.2rem;
+    }
+
+    /* 底部 */
+    .footer-links {
+      margin-top: 3.5rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #dce3ec;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      font-size: 0.9rem;
+      color: #4e637b;
+    }
+
+    .footer-links a {
+      color: #3a5a7c;
+      text-decoration: none;
+      border-bottom: 1px dashed #bccddc;
+    }
+
+    .footer-links a:hover {
+      color: #112b42;
+      border-bottom-style: solid;
+    }
+
+    .footer-note {
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: #74879e;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e4eaf0;
+      margin: 2rem 0 1rem;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- hero -->
+  <div class="hero">
+    <h1><span>雷火</span>电竞 · 对照与延伸</h1>
+    <p>日常查询、对比资讯、赛程参考——一个专注信息梳理的轻量站点。</p>
+  </div>
+
+  <!-- 优势区：日常场景卡片 -->
+  <div class="section">
+    <div class="section-title">为什么选择这里作为参考</div>
+    <div class="grid-cards">
+      <div class="card">
+        <h3>快速对照</h3>
+        <p>赛程、积分、近期战绩并列展示，省去多标签切换的时间。</p>
+      </div>
+      <div class="card">
+        <h3>延伸阅读</h3>
+        <p>每场重要对决背后都有战术分析、版本解读，帮你理解变化。</p>
+      </div>
+      <div class="card">
+        <h3>日常随手查</h3>
+        <p>从阵容到历史交手记录，信息结构清晰，适合碎片时间浏览。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 说明区：融合生活化介绍 + 链接嵌入 -->
+  <div class="section">
+    <div class="section-title">这个站点在做什么</div>
+    <div class="explain-text">
+      <p>平时和朋友聊到某支队伍最近的状态、某个版本的装备改动，总会想要一个地方能快速对照数据。所以常把 <a href="https://site-leihuogaming.com" class="inline-link">雷火电竞</a> 当作信息延伸的起点——没有花哨的弹窗，只有按系列整理的对阵记录、选手数据以及简单的趋势备注。</p>
+      <p style="margin-top:0.8rem;">对于喜欢自己查证的人来说，这里更像一个「参考架」：你可以顺着日期、赛事名称或者英雄池差异去对比，然后结合自己的理解做判断。页面不煽动情绪，也不催促操作，安安静静地陈列信息。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要：轻量问答 -->
+  <div class="section">
+    <div class="section-title">常见疑问摘要</div>
+    <div class="faq-preview">
+      <div class="faq-item">
+        <div class="faq-q">▪ 数据更新频率如何？</div>
+        <div class="faq-a">主要赛事结束后 24 小时内完成基础数据更新，杯赛阶段会随赛程实时补充对阵。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">▪ 可以查到历史赛季的记录吗？</div>
+        <div class="faq-a">近三个赛季的常规赛与季后赛都已归档，更早的数据正在逐步梳理中。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">▪ 移动端浏览体验怎么样？</div>
+        <div class="faq-a">针对手机竖屏做了适配，表格会自动折行，卡片布局在窄屏下仍然易读。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部链接区 -->
+  <div class="footer-links">
+    <a href="https://site-leihuogaming.com">雷火电竞</a>
+    <a href="#" style="pointer-events:none; opacity:0.7;">赛事日历</a>
+    <a href="#" style="pointer-events:none; opacity:0.7;">选手档案</a>
+    <a href="#" style="pointer-events:none; opacity:0.7;">版本笔记</a>
+  </div>
+  <div class="footer-note">
+    页面基于个人兴趣整理 · 信息仅供参考 · 不构成任何建议
+  </div>
+</div>
+</body>
+</html>
